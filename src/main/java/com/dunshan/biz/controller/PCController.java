@@ -41,7 +41,7 @@ public class PCController {
   }
 
   @GetMapping("/query/{id}")
-  public ResultVO<User> getById(String id) {
+  public ResultVO<User> getById(@PathVariable("id") String id) {
     User user = pcService.getById(id);
     return ResultVO.<User>builder().success(user).build();
   }
